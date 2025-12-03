@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setUser } from "../Redux/userSlice";
 import { TbLogout } from "react-icons/tb";
-
+import { TbBrandMinecraft } from "react-icons/tb";
 const Header = () => {
   const { user } = useSelector((store) => store.user);
   const mail = true;
@@ -118,7 +118,7 @@ const Header = () => {
       icon: <RiSettings3Line size={18} />,
       dropdown: true,
       items: [
-        { label: "Minecraft", to: "/resources/minecraft", icon: <FaUser /> },
+        { label: "Minecraft", to: "/resources/minecraft", image:"https://www.pngall.com/wp-content/uploads/13/Minecraft-Logo-PNG-Photos.png" },
         { label: "Website", to: "/resources/website" },
         { label: "Discord", to: "/resource/Discord" },
       ],
