@@ -28,11 +28,11 @@
 [data-theme='dark'] {
   --primary-color: #ffac11;
   --secondary: #222121;
-  --accent:#1b1b1b;
+  --accent:#262423;
   --accent-foreground: #151515;
   --background-color: #0f0f0f;
   --foreground-color: #111;
-  --secend-background-color: #262626;
+  --secend-background-color: #171615;
   --secend-background-hover-color: #ffffff16;
   --btn-bg: #1b1b1b;
   --btn-hover: #364153 ;
