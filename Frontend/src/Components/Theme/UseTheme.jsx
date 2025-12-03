@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(null); // Start with null, will load from localStorage
   const [color, setColor] = useState('#ffac11'); // Default color
 
-  const defaultTheme = 'light';
+  const defaultTheme = 'dark';
   const defaultColor = '#ffac11';
 
   useEffect(() => {
