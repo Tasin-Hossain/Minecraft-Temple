@@ -118,12 +118,22 @@ const Header = () => {
       icon: <RiSettings3Line size={18} />,
       dropdown: true,
       items: [
-        { label: "Your Threads", to: "/", icon: <FaUser /> },
-        { label: "Subscribed", href: "#" },
-        { label: "Unanswered", href: "#" },
+        { label: "Minecraft", to: "/resources/minecraft", icon: <FaUser /> },
+        { label: "Website", to: "/resources/website" },
+        { label: "Discord", to: "/resource/Discord" },
       ],
     },
-    { to: "/forums", title: "Forums", icon: <BiMessageRounded size={18} /> },
+    {
+      to: "/forums",
+      title: "Forums",
+      icon: <BiMessageRounded size={18} />,
+      dropdown: true,
+      items: [
+        { label: "Minecraft", to: "/resources/minecraft", icon: <FaUser /> },
+        { label: "Website", to: "/resources/website" },
+        { label: "Discord", to: "/resource/Discord" },
+      ],
+    },
     { to: "/support", title: "Support", icon: <BiSupport size={18} /> },
     user && { to: "/ads", title: "Advertise", icon: <GrAnnounce size={18} /> },
     {
@@ -153,34 +163,27 @@ const Header = () => {
         {/* NavLinks */}
         <div className="">
           <ul className="flex text-(--white-color)">
-            {headerLinks.map(
-              (item, idx) =>
-                item && (
+            {headerLinks.map((item, idx) =>
+              item ? (
+                <div key={idx} className="flex items-center relative group">
+                  {/* Parent NavLink */}
                   <NavLink
-                    key={idx}
-                    to={item.to}
+                    to={item.to || "#"} // dropdown holeo route thakbe
                     className={({ isActive }) =>
-                      isActive ? "text-(--custom-color) rounded-md " : ""
+                      `p-3 flex items-center gap-2 cursor-pointer transition-all 
+                        ${isActive ? "text-(--custom-color)" : ""} 
+                        group-hover:text-(--custom-color)`
                     }
                   >
-                    {({ isActive }) => (
-                      <span
-                        className={`cursor-pointer p-3 flex items-center gap-2 hover:text-(--custom-color) transition-all relative ${
-                          item.className || ""
-                        }`}
-                      >
-                        {item.icon} {item.title}
-                        {/* send isActive to Dropdown */}
-                        {item.dropdown && (
-                          <Dropdown
-                            items={item.items || []}
-                            className="hover:text-(--white-color)"
-                          />
-                        )}
-                      </span>
-                    )}
+                    {item.icon} {item.title}
                   </NavLink>
-                )
+
+                  {/* Dropdown (only if dropdown exists) */}
+                 <div className=" py-3">
+                   {item.dropdown && <Dropdown items={item.items} />}
+                 </div>
+                </div>
+              ) : null
             )}
           </ul>
         </div>

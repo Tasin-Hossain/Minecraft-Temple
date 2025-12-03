@@ -34,7 +34,7 @@ const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
 
         <MdOutlineArrowDropDown
           size={20}
-          className={`text-(--arrow-color) transition-transform ${
+          className={`text-(--dim-white-color) transition-transform ${
             open ? "rotate-180" : "rotate-0"
           } ${className}`}
         />
