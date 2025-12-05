@@ -19,6 +19,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../Redux/userSlice";
 import { TbLogout } from "react-icons/tb";
 import { TbBrandMinecraft } from "react-icons/tb";
+import { ButtonPrimary } from "./ui/Button/Button";
 const Header = () => {
   const { user } = useSelector((store) => store.user);
   const mail = true;
@@ -468,16 +469,16 @@ const Header = () => {
                   className="cursor-pointer hover:text-(--white-color)"
                 />
 
+              </div>
                 <div>
-                  <div href="" className="flex items-center gap-2 btn2 ">
+                  <ButtonPrimary href="" className="flex items-center  ">
                     <MdOutlineRocketLaunch
                       size={16}
                       className="text-(--white-color)"
                     />{" "}
                     Go Premium
-                  </div>
+                  </ButtonPrimary>
                 </div>
-              </div>
 
               {/* Notification popup */}
               {notifyOpenPopup && (

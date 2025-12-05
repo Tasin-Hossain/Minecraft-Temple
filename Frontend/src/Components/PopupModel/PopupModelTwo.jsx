@@ -3,7 +3,7 @@ import { FaRegSave } from "react-icons/fa";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import Loader from "../ui/Loader/LoaderTwo";
-import Button from "../ui/Button/Button";
+import Button, { ButtonRed } from "../ui/Button/Button";
 import { MdOutlineLockOpen } from "react-icons/md";
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import CheckboxOption from "../ui/Checkox/CheckboxOption";
@@ -318,9 +318,9 @@ export function ImageChangePopup({
             <div className="w-full flex gap-2 items-center justify-center border-t border-(--border-color)">
               {/* Cancel button */}
               <div className="flex items-center justify-center py-3 ">
-                <Button className="bg-green-600 hover:bg-green-700">
+                <ButtonRed className="bg-green-600 hover:bg-green-700">
                   Cancel
-                </Button>
+                </ButtonRed>
               </div>
 
               {/* Delete button */}
@@ -333,8 +333,8 @@ export function ImageChangePopup({
                   </div>
                 ) : (
                   <Button
-                    icon={<RiDeleteBin2Line className="text-red-400" />}
-                    className="text-red-400! font-semibold"
+                    icon={<RiDeleteBin2Line className="" />}
+                    className=" font-semibold"
                   >
                     Delete
                   </Button>
@@ -509,14 +509,14 @@ export function LoginPopup({
             <div className="w-full flex gap-2 items-center justify-center border-t border-(--border-color)">
               {/* Cancel button */}
               <div className="flex items-center justify-center py-3 ">
-                <Button
+                <ButtonRed
                   onClick={() => {
                     setOpen(false);
                   }}
                   className="bg-green-600 hover:bg-green-700"
                 >
                   Cancel
-                </Button>
+                </ButtonRed>
               </div>
 
               {/* Login button */}
@@ -792,12 +792,12 @@ export function RegisterPopup({
             <div className="w-full flex gap-2 items-center justify-center border-t border-(--border-color)">
               {/* Cancel button */}
               <div className="flex items-center justify-center py-3 ">
-                <Button
+                <ButtonRed
                   onClick={() => setOpen(false)}
                   className="bg-green-600 hover:bg-green-700"
                 >
                   Cancel
-                </Button>
+                </ButtonRed>
               </div>
 
               {/* Register button */}
@@ -941,12 +941,12 @@ export function TwhoFactroEnabled({
 
           {/* Buttons */}
           <div className="w-full flex gap-2 items-center justify-center border-t border-(--border-color) py-3">
-            <Button
+            <ButtonRed
               onClick={() => setOpen(false)}
-              className="bg-red-600 hover:bg-red-700"
+              className=""
             >
               Cancel
-            </Button>
+            </ButtonRed>
 
             {loading ? (
               <Button className="bg-green-600 hover:bg-green-700 flex items-center gap-2">
@@ -1092,12 +1092,12 @@ export function TwhoFactroDisabled({
           </div>
           {/* Buttons */}
           <div className="w-full flex gap-2 items-center justify-center border-t border-(--border-color) py-3">
-            <Button
+            <ButtonRed
               onClick={() => setOpen(false)}
-              className="bg-red-600 hover:bg-red-700"
+              className=""
             >
               Cancel
-            </Button>
+            </ButtonRed>
 
             {loading ? (
               <Button className="bg-green-600 hover:bg-green-700 flex items-center gap-2">
@@ -1105,8 +1105,8 @@ export function TwhoFactroDisabled({
               </Button>
             ) : (
               <Button
-                icon={<IoLockClosedOutline className="text-red-400" />}
-                className="text-red-400! font-semibold"
+                icon={<IoLockClosedOutline className="" />}
+                className=" font-semibold"
                 onClick={handleDisable2FA}
               >
                 Disable 2FA

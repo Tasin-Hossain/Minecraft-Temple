@@ -12,7 +12,7 @@ import Input from "../../Components/ui/Input/Input";
 
 const AccountDetails = () => {
   // Loader
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // Change Email
   const [email, setEmail] = useState(false);
@@ -636,7 +636,7 @@ const AccountDetails = () => {
                 icon={<FaRegSave />}
                 className="bg-green-600 hover:bg-green-700"
               >
-                Create
+                Save
               </Button>
             )}
           </div>

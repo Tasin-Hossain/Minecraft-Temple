@@ -59,3 +59,33 @@ export function ButtonRed({
     </button>
   );
 }
+
+export function ButtonPrimary({
+  children,
+  icon = null,
+  className = "",
+  onClick,
+  type = "button",
+  disabled = false,
+}) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={`
+        flex items-center gap-2 justify-center px-6 py-2 font-semibold text-white bg-linear-to-b from-[#ffac11] to-[#ffac11] shadow-[0_5px_0px_#bb7e0c,0_-5px_0px_#fbaf23]
+        hover:brightness-110 hover:shadow-[0_5px_0px_#bb7e0c,0_-5px_0px_#fbaf23]
+        active:translate-y-0.5 active:shadow-[0_1px_0px_#bb7e0c,0_-5px_0px_#fbaf23]
+        transition-all duration-150
+        disabled:opacity-50 disabled:cursor-not-allowed
+        cursor-pointer rounded-sm
+
+        ${className}
+      `}
+    >
+      {icon && <span className="text-[18px]">{icon}</span>}
+      {children}
+    </button>
+  );
+}
