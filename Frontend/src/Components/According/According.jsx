@@ -38,7 +38,7 @@ export default function ForumAccordion({
         }`}
         style={{}}
       >
-        <div className="bg-white shadow-sm border border-gray-200 rounded-xl p-4 mb-4">
+        <div className="bg-(--accent) border-t-5 border-(--custom-color) rounded-sm  mb-4">
           {children}
         </div>
       </div>

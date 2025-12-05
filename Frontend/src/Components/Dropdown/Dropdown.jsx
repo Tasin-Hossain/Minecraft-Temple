@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
+export const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -73,4 +73,4 @@ const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
   );
 };
 
-export default Dropdown;
+

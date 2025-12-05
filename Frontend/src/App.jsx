@@ -10,7 +10,7 @@ import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import Support from "./Pages/Support";
 import Advertise from "./Pages/Advertise";
 import Discord from "./Pages/Discord";
-import Forums from "./Pages/Forums";
+import Forums from "./Pages/Community/Forums";
 import NavLinksHome from "./Components/NavLinks/NavLinksHome";
 import NavLinksForums from "./Components/NavLinks/NavLinksForums";
 import NavLinksSupport from "./Components/NavLinks/NavLinksSupport";
@@ -36,7 +36,7 @@ import AccountRemoval from "./Pages/Accounts/AccountRemoval";
 import ManageTeams from "./Pages/Accounts/ManageTeams";
 import ChangeUserName from "./Pages/Accounts/ChangeUserName";
 import TwofaVerify from "./Pages/Auth/TwofaVerify";
-
+import Posts from "./Pages/Community/Posts";
 
 const router = createBrowserRouter([
   {
@@ -107,13 +107,24 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/forums",
+    path: "/community",
     element: (
       <>
-        <Header />
-        <NavLinksForums />
-        <Forums />
-        <Footer />
+        <section className="bg-(--secend-background-color)">
+          <div className="sticky top-0 z-1000">
+            <Header />
+            <NavLinksForums />
+          </div>
+          <div className="flex container">
+            <div className="w-[70%]">
+              <Forums />
+            </div>
+            <div className="w-[30%]">
+              <Posts/>
+            </div>
+          </div>
+          <Footer />
+        </section>
       </>
     ),
   },
@@ -577,9 +588,7 @@ function App() {
   return (
     <>
       {/* RouterProvider wraps everything, including TokenExpiryHandler */}
-      <RouterProvider router={router}>
-
-      </RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }

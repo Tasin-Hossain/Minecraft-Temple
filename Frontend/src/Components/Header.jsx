@@ -9,7 +9,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { FiBell } from "react-icons/fi";
 import { MdOutlineRocketLaunch } from "react-icons/md";
 import Logo from "../Assets/logo.png";
-import Dropdown from "./Dropdown/Dropdown";
+import {Dropdown} from "./Dropdown/Dropdown";
 import { FaUser } from "react-icons/fa";
 import { LoginPopup, RegisterPopup } from "./PopupModel/PopupModelTwo";
 import { useSelector } from "react-redux";
@@ -140,8 +140,8 @@ const Header = () => {
       ],
     },
     {
-      to: "/forums",
-      title: "Forums",
+      to: "/community",
+      title: "Community",
       icon: <BiMessageRounded size={18} />,
       dropdown: true,
       items: [
@@ -150,7 +150,7 @@ const Header = () => {
         { label: "Discord", to: "/resource/Discord" },
       ],
     },
-    { to: "/support", title: "Support", icon: <BiSupport size={18} /> },
+    { to: "/support", title: "Tickets", icon: <BiSupport size={18} /> },
     user && { to: "/ads", title: "Advertise", icon: <GrAnnounce size={18} /> },
     {
       to: "/discord",

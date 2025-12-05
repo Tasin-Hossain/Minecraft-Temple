@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from '../Dropdown/Dropdown'
+import {Dropdown} from '../Dropdown/Dropdown'
 import { Link } from "react-router-dom";
 
 const NavLinks = ({ leftLinks = [], rightLinks = [] }) => {
