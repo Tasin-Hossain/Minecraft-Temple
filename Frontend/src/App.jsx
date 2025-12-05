@@ -10,7 +10,7 @@ import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import Support from "./Pages/Support";
 import Advertise from "./Pages/Advertise";
 import Discord from "./Pages/Discord";
-import Forums from "./Pages/Forums";
+import Forums from "./Pages/Community/Forums";
 import NavLinksHome from "./Components/NavLinks/NavLinksHome";
 import NavLinksForums from "./Components/NavLinks/NavLinksForums";
 import NavLinksSupport from "./Components/NavLinks/NavLinksSupport";
@@ -36,7 +36,7 @@ import AccountRemoval from "./Pages/Accounts/AccountRemoval";
 import ManageTeams from "./Pages/Accounts/ManageTeams";
 import ChangeUserName from "./Pages/Accounts/ChangeUserName";
 import TwofaVerify from "./Pages/Auth/TwofaVerify";
-
+import Posts from "./Pages/Community/Posts";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header />
-        <NavLinksHome />
+       
         <Home />
         <Footer />
       </>
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         <section>
           <div>
             <Header />
-            <NavLinksHome />
+           
           </div>
           <div className="bg-(--secend-background-color) py-6">
             <Login />
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
       <section>
         <div>
           <Header />
-          <NavLinksHome />
+         
         </div>
         <div className="bg-(--secend-background-color) py-6">
           <Register />
@@ -107,13 +107,23 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/forums",
+    path: "/community",
     element: (
       <>
-        <Header />
-        <NavLinksForums />
-        <Forums />
-        <Footer />
+        <section className="bg-(--secend-background-color)">
+          <div className="sticky top-0 z-1000">
+            <Header />
+          </div>
+          <div className="flex container">
+            <div className="w-[75%]">
+              <Forums />
+            </div>
+            <div className="w-[25%]">
+              <Posts/>
+            </div>
+          </div>
+          <Footer />
+        </section>
       </>
     ),
   },
@@ -122,7 +132,6 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header />
-        <NavLinksSupport />
         <Support />
         <Footer />
       </>
@@ -154,7 +163,6 @@ const router = createBrowserRouter([
         <section className="bg-(--secend-background-color)">
           <div className="sticky top-0 z-1000">
             <Header />
-            <NavLinksYourAccount />
           </div>
 
           <div className="main flex">
@@ -177,7 +185,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
           <div className="bg-(--background2-color)">
             <YourProfile />
           </div>
@@ -193,7 +200,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -214,7 +220,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -235,7 +240,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -256,7 +260,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -277,7 +281,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -298,7 +302,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -320,7 +324,7 @@ const router = createBrowserRouter([
         <section className="bg-(--secend-background-color)">
           <div className="sticky top-0 z-1000">
             <Header />
-            <NavLinksYourAccount />
+            
           </div>
 
           <div className="main flex">
@@ -343,7 +347,7 @@ const router = createBrowserRouter([
         <section className="bg-(--secend-background-color)">
           <div className="sticky top-0 z-1000">
             <Header />
-            <NavLinksYourAccount />
+            
           </div>
 
           <div className="main flex">
@@ -365,7 +369,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -387,7 +391,7 @@ const router = createBrowserRouter([
         <section className="bg-(--secend-background-color)">
           <div className=" sticky top-0 z-1000">
             <Header />
-            <NavLinksYourAccount />
+            
           </div>
 
           <div className="main flex">
@@ -409,7 +413,7 @@ const router = createBrowserRouter([
       <>
         <section className="bg-(--secend-background-color)">
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -430,7 +434,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -451,7 +455,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -472,7 +476,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -493,7 +497,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -514,7 +518,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -535,7 +539,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -556,7 +560,7 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          <NavLinksYourAccount />
+          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -576,10 +580,8 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      {/* RouterProvider wraps everything, including TokenExpiryHandler */}
-      <RouterProvider router={router}>
-
-      </RouterProvider>
+      
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }

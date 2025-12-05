@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
+export const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -42,9 +42,9 @@ const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
       {open && (
         <div
           className="absolute top-7 -left-20 mt-2 w-48 rounded-md 
-          bg-(--accent) border-t-5 border-(--custom-color) shadow-lg z-20 "
+          bg-(--accent) border-t-5 border-b-5 border-(--custom-color) shadow-lg z-20 "
         >
-          <div className="mt-1 bg-">
+          <div>
             {/* Arrow span */}
             <div className="arrowspan absolute -top-3 left-20.5"></div>
 
@@ -52,7 +52,7 @@ const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
               <Link
                 key={i}
                 to={item.to || "#"}
-                className="flex items-center gap-2 py-2  px-3 hover:bg-(--secend-background-hover-color) text-(--dim-white-color)"
+                className="flex items-center gap-2 py-2  px-3 hover:bg-(--secend-background-hover-color) text-(--dim-white-color)  border border-(--border-color)"
               >
                 {item.image ? (
                   <img
@@ -73,4 +73,4 @@ const Dropdown = ({ label, items = [], parentActive, className = "" }) => {
   );
 };
 
-export default Dropdown;
+

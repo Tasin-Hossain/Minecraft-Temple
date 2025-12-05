@@ -11,6 +11,7 @@
   --secend-background-hover-color: #00000016;
   --btn-bg: #ededed;
   --btn-hover: #dcd7d7;
+  --btn-border: #3d3938;
   --popup-bg: #161c27;
   --tiptap-artboard-bg: #10151d;
   --tiptap-header-bg:#1c2330;
@@ -28,14 +29,15 @@
 [data-theme='dark'] {
   --primary-color: #ffac11;
   --secondary: #222121;
-  --accent:#1b1b1b;
+  --accent:#262423;
   --accent-foreground: #151515;
   --background-color: #0f0f0f;
   --foreground-color: #111;
-  --secend-background-color: #262626;
+  --secend-background-color: #171615;
   --secend-background-hover-color: #ffffff16;
   --btn-bg: #1b1b1b;
   --btn-hover: #364153 ;
+  --btn-border: #fffcfb6f;
   --popup-bg: #161c27;
   --tiptap-artboard-bg: #10151d;
   --tiptap-header-bg:#1c2330;
@@ -66,7 +68,6 @@ body {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-variation-settings: "wdth" 700;
 }
 .container {
   max-width: 1400px;
