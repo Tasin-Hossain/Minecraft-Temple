@@ -74,9 +74,9 @@ export function ButtonPrimary({
       onClick={onClick}
       disabled={disabled}
       className={`
-        flex items-center gap-2 justify-center px-6 py-2 font-semibold text-white bg-linear-to-b from-[#ffac11] to-[#ffac11] shadow-[0_5px_0px_#bb7e0c,0_-5px_0px_#fbaf23]
-        hover:brightness-110 hover:shadow-[0_5px_0px_#bb7e0c,0_-5px_0px_#fbaf23]
-        active:translate-y-0.5 active:shadow-[0_1px_0px_#bb7e0c,0_-5px_0px_#fbaf23]
+        flex items-center gap-2 justify-center px-6 py-3 font-semibold text-white bg-[#FFA41F] shadow-[inset_0_5px_0px_#ffd953,inset_0_-5px_0px_#ff791a] border-2 border-(--btn-border)
+        hover:brightness-110 hover:shadow-[inset_0_5px_0px_#ffd953,inset_0_-5px_0px_#ff791a]
+        active:translate-y-0.5 active:shadow-[inset_0_5px_0px_#ffd953,inset_0_-1px_0px_#ff791a]
         transition-all duration-150
         disabled:opacity-50 disabled:cursor-not-allowed
         cursor-pointer rounded-sm
