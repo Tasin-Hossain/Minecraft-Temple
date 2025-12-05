@@ -19,7 +19,7 @@ export default function ForumAccordion({
       >
         <div className="flex items-center gap-3 cursor-pointer">
           {icon}
-          <h2 className=" font-bold text-(--custom-color)">{title}</h2>
+          <h2 className=" font-bold text-[16px] text-(--custom-color)">{title}</h2>
         </div>
 
         <MdOutlineArrowDropDown
