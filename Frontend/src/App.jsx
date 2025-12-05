@@ -115,10 +115,10 @@ const router = createBrowserRouter([
             <Header />
           </div>
           <div className="flex container">
-            <div className="w-[70%]">
+            <div className="w-[75%]">
               <Forums />
             </div>
-            <div className="w-[30%]">
+            <div className="w-[25%]">
               <Posts/>
             </div>
           </div>
