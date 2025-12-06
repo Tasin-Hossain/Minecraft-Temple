@@ -4,6 +4,11 @@ import { IoMdContacts } from "react-icons/io";
 import { FaEnvelopeOpenText } from "react-icons/fa6";
 import Input from '../Components/ui/Input/Input';
 import minecraftData from '../Api/Minecraft.json';
+import { ToastContainer, toast } from 'react-toastify';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 
 
 const Home = () => {
@@ -22,6 +27,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [words.length]);
 
+const notify = () => toast("Downloading your file!");
 
   return (
     <div className='bg-gray-900 p-4 space-y-5'>
@@ -86,8 +92,117 @@ const Home = () => {
           <h2 className='text-2xl font-bold'>Latest Minecraft Plugins</h2>
           <p className='font-medium'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque obcaecati, consequatur molestiae quo nulla eius.</p>
         </div>
-        <div>
-          
+        {/* plugins card sec */}
+        <div className='grid grid-cols-4 gap-4'>
+          {/* plugins card 1 */}
+          <div className='flex flex-col items-stretch gap-2 bg-gray-700 rounded-2xl'>
+            <div className='overflow-hidden p-2'>
+              <img className='w-full h-full object-cover rounded-2xl' src="/src/Assets/Mc slide 1.jpg" alt="" />
+            </div>
+            <div>
+              <h2 className='text-2xl font-bold text-amber-600 px-3'>Custom Items</h2>
+              <p className='text-amber-100 mb-3 px-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, ab.</p>
+              <div className='flex gap-3 items-center justify-between px-6 mb-4'>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Views</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Download</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>2.2</h3>
+                  <h4 className='font-medium'>Rating</h4>
+                </div>
+              </div>
+              <div className='text-center px-2 mb-3'>
+                <button onClick={notify} className='bg-amber-600 rounded-2xl p-2 w-full text-white'>Download</button>
+                <ToastContainer />
+              </div>
+            </div>
+          </div>
+          {/* plugins card 2 */}
+          <div className='flex flex-col items-stretch gap-2 bg-gray-700 rounded-2xl'>
+            <div className='overflow-hidden p-2'>
+              <img className='w-full h-full object-cover rounded-2xl' src="/src/Assets/Mc slide 1.jpg" alt="" />
+            </div>
+            <div>
+              <h2 className='text-2xl font-bold text-amber-600 px-3'>Custom Items</h2>
+              <p className='text-amber-100 mb-3 px-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, ab.</p>
+              <div className='flex gap-3 items-center justify-between px-6 mb-4'>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Views</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Download</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>2.2</h3>
+                  <h4 className='font-medium'>Rating</h4>
+                </div>
+              </div>
+              <div className='text-center px-2 mb-3'>
+                <button onClick={notify} className='bg-amber-600 rounded-2xl p-2 w-full text-white'>Download</button>
+              </div>
+            </div>
+          </div>
+          {/* plugins card 3 */}
+          <div className='flex flex-col items-stretch gap-2  bg-gray-700 rounded-2xl'>
+            <div className='overflow-hidden p-2'>
+              <img className='w-full h-full object-cover rounded-2xl' src="/src/Assets/Mc slide 1.jpg" alt="" />
+            </div>
+            <div>
+              <h2 className='text-2xl font-bold text-amber-600 px-3'>Custom Items</h2>
+              <p className='text-amber-100 mb-3 px-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, ab.</p>
+              <div className='flex gap-3 items-center justify-between px-6 mb-4'>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Views</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Download</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>2.2</h3>
+                  <h4 className='font-medium'>Rating</h4>
+                </div>
+              </div>
+              <div className='text-center px-2 mb-3'>
+                <button onClick={notify} className='bg-amber-600 rounded-2xl p-2 w-full text-white'>Download</button>
+              </div>
+            </div>
+          </div>
+          {/* plugins card 4 */}
+          <div className='flex flex-col items-stretch gap-2  bg-gray-700 rounded-2xl'>
+            <div className='overflow-hidden p-2'>
+              <img className='w-full h-full object-cover rounded-2xl' src="/src/Assets/Mc slide 1.jpg" alt="" />
+            </div>
+            <div>
+              <h2 className='text-2xl font-bold text-amber-600 px-3'>Custom Items</h2>
+              <p className='text-amber-100 mb-3 px-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, ab.</p>
+              <div className='flex gap-3 items-center justify-between px-6 mb-4'>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Views</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>200</h3>
+                  <h4 className='font-medium'>Download</h4>
+                </div>
+                <div className='text-center'>
+                  <h3 className='text-2xl font-bold'>2.2</h3>
+                  <h4 className='font-medium'>Rating</h4>
+                </div>
+              </div>
+              <div className='text-center px-2 mb-3'>
+                <button onClick={notify} className='bg-amber-600 rounded-2xl p-2 w-full text-white'>Download</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
