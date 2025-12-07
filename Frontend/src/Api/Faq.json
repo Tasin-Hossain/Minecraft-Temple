@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Staff Moderated",
+    "description": "Resources undergo a manual approval process by our experienced team of moderators. We ensure that all details are included and the files are safe.",
+    "icon_description": "https://img.icons8.com/windows/32/shield.png"
+  },
+  {
+    "id": 2,
+    "title": "Free Downloads",
+    "description": "It's easy for your to download your favorite premium content completely free! Leveling up your profile introduces more downloads and member customization perks.",
+    "icon_description": "https://img.icons8.com/sf-regular/48/download.png"
+  },
+  {
+    "id": 3,
+    "title": "Authentic Reviews",
+    "description": "Read reviews from others to understand what they think before you download! Only downloaders can review files and we remove reviews which violate policies.",
+    "icon_description": "https://img.icons8.com/fluency-systems-regular/50/star.png"
+  },
+  {
+    "id": 4,
+    "title": "Enhanced Privacy",
+    "description": "Our intelligent downloading system provides more for the member. From removal of identification information, to custom privacy options. Keep your data safe from others.",
+    "icon_description": "https://img.icons8.com/small/50/happy.png"
+  }
+]
