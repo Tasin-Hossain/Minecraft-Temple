@@ -11,6 +11,8 @@ import faqData from '../Api/Faq.json';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Button from '../Components/ui/Button/Button';
+import Rating from './Rating';
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 
 
@@ -134,8 +136,8 @@ const Home = () => {
                     </div>
 
                     <div className='text-center'>
-                      <h3 className='text-2xl font-bold'>{item.rating}</h3>
-                      <h4 className='font-medium'>Rating</h4>
+                      <Rating></Rating>
+                      <h4 className='font-medium mt-1'>Rating</h4>
                     </div>
                   </div>
 
@@ -160,23 +162,41 @@ const Home = () => {
           <h2 className='text-2xl font-bold'>Why Download with Minecraft Temple?</h2>
           <p className='font-medium'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos placeat doloremque illo esse! Ea, iste eaque. Officiis eius voluptatem quaerat.</p>
         </div>
-        <div>
-          <div className='grid grid-cols-4 gap-4'>
-            {
-              faqData.map((faq) => (
-                <div className='border bg-gray-800 p-2 rounded-2xl border-gray-600'>
-                  <div className='inline-flex items-center justify-center mb-2'>
-                    <img className='mr-1' src={faq.icon_description} alt="" />
-                    <h3 className='font-semibold'>{faq.title}</h3>
-                  </div>
-                  <div>
-                    <p className='font-medium'>{faq.description}</p>
-                  </div>
+        <div className='grid grid-cols-4 gap-4'>
+          {
+            faqData.map((faq) => (
+              <div className='border bg-gray-800 p-2 rounded-2xl border-gray-600'>
+                <div className='inline-flex items-center justify-center mb-2'>
+                  <img className='mr-1' src={faq.icon_description} alt="" />
+                  <h3 className='font-semibold'>{faq.title}</h3>
                 </div>
-
-              ))
-            }
-          </div>
+                <div>
+                  <p className='font-medium'>{faq.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      {/* community sec */}
+      <div className='px-5'>
+        <div className='mb-3'>
+          <h2 className='text-2xl font-bold'>You can join our Community</h2>
+          <p className='font-medium'>We’re an open community for distributing your creations, hiring others, and making friends.</p>
+        </div>
+        <div className='grid grid-cols-3 gap-4'>
+          <a className='border p-5 rounded-2xl bg-gray-800 group' href='#'>
+            <h2 className='inline-flex items-center group-hover:text-amber-500 transition-colors text-xl font-bold mb-2'>Share Assets<MdKeyboardArrowRight size={25} /></h2>
+            <p className='font-medium'>Share your resources and assets on our website.We're the best online repository of premium resources and it's free to get started!</p>
+          </a>
+          <a className='border p-5 rounded-2xl bg-gray-800 group' href='#'>
+            <h2 className='inline-flex items-center group-hover:text-amber-500 transition-colors text-xl font-bold mb-2'>Hire a Creator<MdKeyboardArrowRight size={25} /></h2>
+            <p className='font-medium'>Share your resources and assets on our website.We're the best online repository of premium resources and it's free to get started!</p>
+          </a>
+          <a className='border p-5 rounded-2xl bg-gray-800 group' href='#'>
+            <h2 className='inline-flex items-center group-hover:text-amber-500 transition-colors text-xl font-bold mb-2'>Join our Discord<MdKeyboardArrowRight size={25} /></h2>
+            <p className='font-medium'>Share your resources and assets on our website.We're the best online repository of premium resources and it's free to get started!</p>
+          </a>
         </div>
       </div>
     </div>
