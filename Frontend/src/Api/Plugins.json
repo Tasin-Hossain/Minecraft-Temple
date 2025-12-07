@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Custom Items",
+    "image": "/src/Assets/Mc slide 1.jpg",
+    "views": 200,
+    "downloads": 150,
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "title": "Magic Wand",
+    "image": "/src/Assets/Mc slide 2.jpg",
+    "views": 350,
+    "downloads": 290,
+    "rating": 4.6
+  },
+  {
+    "id": 3,
+    "title": "Super Tools",
+    "image": "/src/Assets/Mc slide 3.jpg",
+    "views": 500,
+    "downloads": 430,
+    "rating": 4.9
+  },
+  {
+    "id": 4,
+    "title": "Level System",
+    "image": "/src/Assets/Mc slide 4.jpg",
+    "views": 120,
+    "downloads": 90,
+    "rating": 4.1
+  },
+  {
+    "id": 5,
+    "title": "Level System",
+    "image": "/src/Assets/minecraft 1.webp",
+    "views": 120,
+    "downloads": 90,
+    "rating": 4.1
+  },
+  {
+    "id": 6,
+    "title": "Level System",
+    "image": "/src/Assets/minecraft 3.jpg",
+    "views": 120,
+    "downloads": 90,
+    "rating": 4.1
+  }
+]
