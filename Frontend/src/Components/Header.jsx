@@ -10,7 +10,6 @@ import { FiBell } from "react-icons/fi";
 import { MdOutlineRocketLaunch } from "react-icons/md";
 import Logo from "../Assets/logo.png";
 import {Dropdown} from "./Dropdown/Dropdown";
-import { FaUser } from "react-icons/fa";
 import { LoginPopup, RegisterPopup } from "./PopupModel/PopupModelTwo";
 import { useSelector } from "react-redux";
 import { LOGOUT_API } from "../Api/auth";
@@ -18,7 +17,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setUser } from "../Redux/userSlice";
 import { TbLogout } from "react-icons/tb";
-import { TbBrandMinecraft } from "react-icons/tb";
+
 import { ButtonPrimary } from "./ui/Button/Button";
 const Header = () => {
   const { user } = useSelector((store) => store.user);

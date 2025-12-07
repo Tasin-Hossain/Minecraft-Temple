@@ -15,11 +15,11 @@ export default function ForumAccordion({
       {/* Header */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 py-4"
+        className="flex items-center gap-2 py-2"
       >
         <div className="flex items-center gap-3 cursor-pointer">
           {icon}
-          <h2 className=" font-bold text-[16px] text-(--custom-color)">{title}</h2>
+          <h2 className=" font-semibold text-[15px] text-(--custom-color)">{title}</h2>
         </div>
 
         <MdOutlineArrowDropDown
@@ -38,7 +38,7 @@ export default function ForumAccordion({
         }`}
         style={{}}
       >
-        <div className="bg-(--accent) border-t-5 border-(--custom-color) rounded-sm  mb-4">
+        <div className="bg-(--accent) border-t-5 border-(--custom-color) rounded-sm  mb-2">
           {children}
         </div>
       </div>

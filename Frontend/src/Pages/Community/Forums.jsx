@@ -16,7 +16,7 @@ import { MdSupportAgent } from "react-icons/md";
 const Forums = () => {
   return (
     <>
-      <div>
+      <div className="py-2">
         {/* Minecraft Temple */}
         <ForumAccordion title="Minecraft Temple" defaultOpen={true}>
           <div className="flex flex-col ">
