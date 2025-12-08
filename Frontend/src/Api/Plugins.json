@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Custom Items",
+    "description": " A unique Minecraft plugin to improve your server experience.",
     "image": "/src/Assets/Mc slide 1.jpg",
     "views": 200,
     "downloads": 150,
@@ -10,6 +11,7 @@
   {
     "id": 2,
     "title": "Magic Wand",
+    "description": " A unique Minecraft plugin to improve your server experience.",
     "image": "/src/Assets/Mc slide 2.jpg",
     "views": 350,
     "downloads": 290,
@@ -18,6 +20,7 @@
   {
     "id": 3,
     "title": "Super Tools",
+    "description": " A unique Minecraft plugin to improve your server experience.",
     "image": "/src/Assets/Mc slide 3.jpg",
     "views": 500,
     "downloads": 430,
@@ -26,6 +29,7 @@
   {
     "id": 4,
     "title": "Level System",
+    "description": " A unique Minecraft plugin to improve your server experience.",
     "image": "/src/Assets/Mc slide 4.jpg",
     "views": 120,
     "downloads": 90,
@@ -34,6 +38,7 @@
   {
     "id": 5,
     "title": "Level System",
+    "description": " A unique Minecraft plugin to improve your server experience.",
     "image": "/src/Assets/minecraft 1.webp",
     "views": 120,
     "downloads": 90,
@@ -43,6 +48,7 @@
     "id": 6,
     "title": "Level System",
     "image": "/src/Assets/minecraft 3.jpg",
+     "description": " A unique Minecraft plugin to improve your server experience.",
     "views": 120,
     "downloads": 90,
     "rating": 4.1
