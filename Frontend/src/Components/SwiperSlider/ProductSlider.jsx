@@ -13,7 +13,7 @@ const ProductSlider = () => {
     <>
       <Swiper spaceBetween={15} slidesPerView={4} className="w-[90%] ">
           {pluginsData.map((item) => (
-            <SwiperSlide key={item.id} className=" w-full ">
+            <SwiperSlide key={item.id} className=" w-full cursor-pointer">
               <div className="flex flex-col items-stretch gap-2 bg-(--accent) border border-(--border-color) rounded-md">
                 <div className="overflow-hidden p-1">
                   <img
@@ -32,7 +32,7 @@ const ProductSlider = () => {
 
                   <div className='mb-2'>
                     <div className='flex items-center gap-2 px-3'>
-                        <h1 className='text-[13px]'>MiniTasin</h1>
+                        <h1 className='text-[13px] hover:underline'>MiniTasin</h1>
                         {/* item category */}
                         <span className='text-[13px] text-(--white-color) '>Minecraft config</span>
                     </div>

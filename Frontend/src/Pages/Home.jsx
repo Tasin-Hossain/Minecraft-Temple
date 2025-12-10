@@ -16,6 +16,7 @@ import ProductSlider from "../Components/SwiperSlider/ProductSlider";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 import { LiaTheaterMasksSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
 const faqData = [
   {
     title: "Free Downloads",
@@ -114,7 +115,7 @@ const Home = () => {
                 style={{ transform: `translateY(-${index * 2}em)` }}
               >
                 {words.map((word, i) => (
-                  <span key={i} className=" text-(--primary-color) text-[20px]">
+                  <span key={i} className=" text-(--custom-color) text-[20px]">
                     {word}
                   </span>
                 ))}
@@ -182,25 +183,27 @@ const Home = () => {
           <div className="w-full">
             <div className="flex justify-center  flex-wrap gap-4 pt-4 pb-7">
               {minecraftData.map((item) => (
-                <div
-                  key={item.id}
-                  className="group relative w-[250px] h-[140px] rounded-md overflow-hidden cursor-pointer shadow-lg 
+                <Link to={item.url}>
+                  <div
+                    key={item.id}
+                    className="group relative w-[250px] h-[140px] rounded-md overflow-hidden cursor-pointer shadow-lg 
                      transition-all duration-300 ease-in-out 
                      hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-(--custom-color)"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/50 transition-colors duration-300 group-hover:bg-black/40 z-10"></div>
-                  <h3
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                         text-white text-xl font-bold z-20 drop-shadow-md text-center w-full px-2 hover:text-amber-300"
                   >
-                    {item.title}
-                  </h3>
-                </div>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/50 transition-colors duration-300 group-hover:bg-black/40 z-10"></div>
+                    <h3
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                         text-white text-xl font-bold z-20 drop-shadow-md text-center w-full px-2 hover:text-amber-300"
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -208,7 +211,7 @@ const Home = () => {
       </div>
 
       {/* Plugin sec */}
-      <div className="mt-10 py-10 rounded-md bg-(--accent)">
+      <div className=" relative mt-10 py-10 rounded-md bg-(--accent)">
         <div className="">
           <h2 className="text-[20px] mb-4 font-semibold  w-[90%] m-auto text-(--custom-color)">
             Latest Minecraft Plugins

@@ -33,19 +33,12 @@ import ManageTeams from "./Pages/Accounts/ManageTeams";
 import ChangeUserName from "./Pages/Accounts/ChangeUserName";
 import TwofaVerify from "./Pages/Auth/TwofaVerify";
 import Posts from "./Pages/Community/Posts";
+import ProductSlider from "./Components/SwiperSlider/ProductSlider";
+import AllProducts from "./Pages/Products/AllProducts";
+import ProductsSidebar from "./Components/ProductsSidebar";
+import WelcomeMsg from "./Components/WelcomMessage/WelcomeMsg";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <>
-        <Header />
-       
-        <Home />
-        <Footer />
-      </>
-    ),
-  },
   {
     path: "/login",
     element: (
@@ -99,6 +92,39 @@ const router = createBrowserRouter([
     element: (
       <>
         <TwofaVerify />
+      </>
+    ),
+  },
+  {
+    path: "/",
+    element: (
+      <>
+        <Header />
+       
+        <Home />
+        <Footer />
+      </>
+    ),
+  },
+   {
+    path: "/resources/minecraft",
+    element: (
+      <>
+        <section className="">
+          <Header />
+          
+
+          <div className="main flex container gap-5">
+            <div className="w-[25%] py-8">
+              <ProductsSidebar />
+            </div>
+            <div className="w-[75%] py-8 flex flex-col gap-6">
+              <WelcomeMsg/>
+              <AllProducts />
+            </div>
+          </div>
+          <Footer />
+        </section>
       </>
     ),
   },
@@ -571,6 +597,7 @@ const router = createBrowserRouter([
       </>
     ),
   },
+ 
 ]);
 
 function App() {
