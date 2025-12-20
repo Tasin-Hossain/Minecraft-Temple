@@ -37,6 +37,9 @@ import ProductSlider from "./Components/SwiperSlider/ProductSlider";
 import AllProducts from "./Pages/Products/AllProducts";
 import ProductsSidebar from "./Components/ProductsSidebar";
 import WelcomeMsg from "./Components/WelcomMessage/WelcomeMsg";
+import products from "./Api/Product";
+import Product from "./Pages/Products/ProductDetails";
+import ProductDetails from "./Pages/Products/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +49,6 @@ const router = createBrowserRouter([
         <section>
           <div>
             <Header />
-           
           </div>
           <div className="bg-(--secend-background-color) py-6">
             <Login />
@@ -62,7 +64,6 @@ const router = createBrowserRouter([
       <section>
         <div>
           <Header />
-         
         </div>
         <div className="bg-(--secend-background-color) py-6">
           <Register />
@@ -100,27 +101,43 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header />
-       
+
         <Home />
         <Footer />
       </>
     ),
   },
-   {
+  {
     path: "/resources/minecraft",
     element: (
       <>
         <section className="">
           <Header />
-          
 
           <div className="main flex container gap-5">
             <div className="w-[25%] py-8">
               <ProductsSidebar />
             </div>
             <div className="w-[75%] py-8 flex flex-col gap-6">
-              <WelcomeMsg/>
+              <WelcomeMsg />
               <AllProducts />
+            </div>
+          </div>
+          <Footer />
+        </section>
+      </>
+    ),
+  },
+  {
+    path: `/resources/product/:slug`,
+    element: (
+      <>
+        <section className="">
+          <Header />
+
+          <div className="main flex container gap-5">
+            <div className="w-[75%]">
+              <ProductDetails />
             </div>
           </div>
           <Footer />
@@ -141,7 +158,7 @@ const router = createBrowserRouter([
               <Forums />
             </div>
             <div className="w-[25%]">
-              <Posts/>
+              <Posts />
             </div>
           </div>
           <Footer />
@@ -282,7 +299,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -303,7 +319,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -324,7 +339,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -346,7 +360,6 @@ const router = createBrowserRouter([
         <section className="bg-(--secend-background-color)">
           <div className="sticky top-0 z-1000">
             <Header />
-            
           </div>
 
           <div className="main flex">
@@ -369,7 +382,6 @@ const router = createBrowserRouter([
         <section className="bg-(--secend-background-color)">
           <div className="sticky top-0 z-1000">
             <Header />
-            
           </div>
 
           <div className="main flex">
@@ -391,7 +403,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -413,7 +424,6 @@ const router = createBrowserRouter([
         <section className="bg-(--secend-background-color)">
           <div className=" sticky top-0 z-1000">
             <Header />
-            
           </div>
 
           <div className="main flex">
@@ -435,7 +445,6 @@ const router = createBrowserRouter([
       <>
         <section className="bg-(--secend-background-color)">
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -456,7 +465,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -477,7 +485,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -498,7 +505,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -519,7 +525,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -540,7 +545,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -561,7 +565,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -582,7 +585,6 @@ const router = createBrowserRouter([
       <>
         <section>
           <Header />
-          
 
           <div className="main flex">
             <div className="w-[25%]">
@@ -597,13 +599,11 @@ const router = createBrowserRouter([
       </>
     ),
   },
- 
 ]);
 
 function App() {
   return (
     <>
-      
       <RouterProvider router={router}></RouterProvider>
     </>
   );

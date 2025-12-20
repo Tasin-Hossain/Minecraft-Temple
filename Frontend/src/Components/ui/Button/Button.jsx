@@ -89,3 +89,58 @@ export function ButtonPrimary({
     </button>
   );
 }
+
+export function CategoryButton({
+  children,
+  icon = null,
+  className = "",
+  onClick,
+  type = "button",
+  disabled = false,
+}) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={`
+        flex items-center gap-2 justify-center px-2 uppercase text-(--white-color) text-[13px] font-bold bg-[#29a58c] shadow-[inset_0_4px_0px_#5af0d2,inset_0_-5px_0px_#2eb199] border-2 border-(--btn-border)
+        hover:brightness-110 hover:shadow-[inset_0_4px_0px_#5af0d2,inset_0_-5px_0px_#2eb199]
+        active:translate-y-0.5 active:shadow-[inset_0_4px_0px_#5af0d2,inset_0_-1px_0px_#2eb199]
+        transition-all duration-150
+        disabled:opacity-50 disabled:cursor-not-allowed
+        cursor-pointer rounded-sm
+
+        ${className}
+      `}
+    >
+      {icon && <span className="text-[18px]">{icon}</span>}
+      {children}
+    </button>
+  );
+}
+export function ReportButton({
+  children,
+  icon = null,
+  className = "",
+  onClick,
+  type = "button",
+  disabled = false,
+}) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={`
+        flex items-center gap-2 justify-center px-5 py-2 rounded cursor-pointer  text-(--white-color) text-[13px]  bg-(--accent) 
+        
+
+        ${className}
+      `}
+    >
+      {icon && <span className="text-[18px]">{icon}</span>}
+      {children}
+    </button>
+  );
+}
