@@ -11,10 +11,13 @@ const products = [
       username: "MiniDev",
     },
 
-    title:"⚡X PRISON CORE ⚡ [1.13 - 1.21.X] ⭐ #1 PRISON CORE ⭐ All-in-One ⭐15 Plugins in 1⭐",
+    title:
+      "⚡X PRISON CORE ⚡ [1.13 - 1.21.X] ⭐ #1 PRISON CORE ⭐ All-in-One ⭐15 Plugins in 1⭐",
     slug: "minecraft-survival-server-setup",
-    description:"A complete Minecraft survival server setup with permissions, economy, ranks, and optimized performance.",
-    shortDescription: "✨ INFINITE ENCHANTS ✨ MINES ✨ AUTOSELL ✨CURRENCIES ✨ RANKS ✨ REBIRTHS ✨ MUTLIPLIERS ✨ BOMBS ✨REWARDS",
+    description:
+      "A complete Minecraft survival server setup with permissions, economy, ranks, and optimized performance.",
+    shortDescription:
+      "✨ INFINITE ENCHANTS ✨ MINES ✨ AUTOSELL ✨CURRENCIES ✨ RANKS ✨ REBIRTHS ✨ MUTLIPLIERS ✨ BOMBS ✨REWARDS",
     category: "Minecraft",
     subCategory: "Server Setups",
     price: 15,
@@ -110,6 +113,38 @@ const products = [
         },
       },
     ],
+    versionsHistory: [
+      {
+        version: "2025.4.1.13",
+        date: "Friday at 4:33 PM",
+        downloads: 4,
+      },
+      {
+        version: "2025.4.1.13",
+        date: "Tuesday at 9:45 PM",
+        downloads: 4,
+      },
+      {
+        version: "2025.4.1.12",
+        date: "Dec 13, 2025",
+        downloads: 7,
+      },
+      {
+        version: "2025.4.1.12",
+        date: "Dec 10, 2025",
+        downloads: 4,
+      },
+      {
+        version: "2025.4.1.11",
+        date: "Dec 9, 2025",
+        downloads: 4,
+      },
+      {
+        version: "2025.4.1.11",
+        date: "Dec 7, 2025",
+        downloads: 2,
+      },
+    ],
 
     faqs: [
       {
@@ -117,6 +152,7 @@ const products = [
         answer: "Yes, fully compatible with Paper & Spigot.",
       },
     ],
+  
 
     requirements: ["Java 17", "4GB RAM minimum"],
 
@@ -159,7 +195,8 @@ const products = [
         },
         rating: 5,
         title: "Absolute Game Changer!",
-        comment: "This is hands down the best prison core I've ever used. Everything works flawlessly on 1.21, bombs and multipliers are insane. Worth every penny!",
+        comment:
+          "This is hands down the best prison core I've ever used. Everything works flawlessly on 1.21, bombs and multipliers are insane. Worth every penny!",
         createdAt: "2025-12-18T14:22:00.000Z",
         helpful: 24,
       },
@@ -171,7 +208,8 @@ const products = [
         },
         rating: 5,
         title: "Feature-packed and well supported",
-        comment: "All-in-one solution that saved me hours of setup. Developer responds quickly on Discord. Highly configurable and stable.",
+        comment:
+          "All-in-one solution that saved me hours of setup. Developer responds quickly on Discord. Highly configurable and stable.",
         createdAt: "2025-12-10T09:15:00.000Z",
         helpful: 18,
       },
@@ -183,7 +221,8 @@ const products = [
         },
         rating: 4,
         title: "Great, but needs minor tweaks",
-        comment: "Infinite enchants are amazing, but had small issues with auto-sell on high player count. Fixed after update though. Overall solid 4.5/5",
+        comment:
+          "Infinite enchants are amazing, but had small issues with auto-sell on high player count. Fixed after update though. Overall solid 4.5/5",
         createdAt: "2025-11-28T19:40:00.000Z",
         helpful: 12,
       },
@@ -195,7 +234,8 @@ const products = [
         },
         rating: 5,
         title: "Perfect for new prison servers",
-        comment: "As a beginner, this made setting up my prison server super easy. Documentation is clear and features are top-tier.",
+        comment:
+          "As a beginner, this made setting up my prison server super easy. Documentation is clear and features are top-tier.",
         createdAt: "2025-11-15T11:05:00.000Z",
         helpful: 15,
       },
@@ -207,12 +247,15 @@ const products = [
         },
         rating: 4,
         title: "Good on newer versions",
-        comment: "Runs perfectly on 1.21, but some particle effects glitch on 1.18. Still, updates are frequent and dev is active.",
+        comment:
+          "Runs perfectly on 1.21, but some particle effects glitch on 1.18. Still, updates are frequent and dev is active.",
         createdAt: "2025-10-20T16:30:00.000Z",
         helpful: 7,
       },
     ],
   },
+  
+  
 ];
 
 export default products;

@@ -37,26 +37,26 @@ const ProductDetails = () => {
               <img
                 src={product.thumbnail}
                 alt="X Prison Core Thumbnail"
-                className="rounded-xl shadow-2xl max-w-lg border-4 border-(--primary-color)"
+                className="rounded-xl shadow-2xl max-w-lg border-4 border-(--custom-color)"
               />
             </div>
 
             {/* Tagline */}
-            <p className="text-3xl font-bold text-center text-(--primary-color) tracking-wide">
+            <p className="text-3xl font-bold text-center text-(--custom-color) tracking-wide">
               {product.shortDescription}
             </p>
 
             {/* Introduction */}
             <div className="text-center text-xl">
               <p>{product.description}</p>
-              <p className="mt-4 text-(--primary-color)">
+              <p className="mt-4 text-(--custom-color)">
                 The ultimate prison experience for your server!
               </p>
             </div>
 
             {/* Key Features - Rich List like TipTap */}
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6 text-(--primary-color)">
+              <h2 className="text-3xl font-bold mb-6 text-(--custom-color)">
                 🔥 Key Features
               </h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
@@ -111,7 +111,7 @@ const ProductDetails = () => {
             {/* Gallery / Screenshots */}
             {product.gallery.length > 0 && (
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6 text-(--primary-color)">
+                <h2 className="text-3xl font-bold mb-6 text-(--custom-color)">
                   📸 Screenshots
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -139,7 +139,7 @@ const ProductDetails = () => {
 
             {/* Optional: Config Example */}
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold mb-4 text-(--primary-color)">
+              <h2 className="text-2xl font-bold mb-4 text-(--custom-color)">
                 ⚙️ Example Command
               </h2>
               <pre className="bg-black p-4 rounded-lg overflow-x-auto">
@@ -190,7 +190,7 @@ const ProductDetails = () => {
             {product.dependencies && product.dependencies.length > 0 ? (
               <>
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="text-[20px] font-semibold text-(--primary-color)">
+                  <span className="text-[20px] font-semibold text-(--custom-color)">
                     🔌Dependencies
                   </span>
                   <span>🔴Required 🟢Optional</span>
@@ -225,7 +225,7 @@ const ProductDetails = () => {
           <div className="p-8 bg-(--accent) text-(--white-color)">
             {product.changelog && product.changelog.length > 0 ? (
               <>
-                <h1 className="mb-5 text-[20px] font-semibold text-(--primary-color)">
+                <h1 className="mb-5 text-[20px] font-semibold text-(--custom-color)">
                   📜 Change Logs
                 </h1>
                 <div className="flex flex-col gap-6">
@@ -240,7 +240,7 @@ const ProductDetails = () => {
                       {(context) => (
                         <div className="bg-(--accent-foreground) rounded-sm border border-(--border-color) ">
                           <div className="flex justify-between  items-center py-5 px-5 border-b border-(--border-color)">
-                            <span className="font-bold text-(--primary-color)">
+                            <span className="font-bold text-(--custom-color)">
                               v{log.version}
                             </span>
                             <span className="opacity-70">{log.date}</span>
@@ -285,7 +285,7 @@ const ProductDetails = () => {
         return (
           <div className="p-8 bg-(--accent) text-(--white-color)">
             <div className="space-y-4">
-              <h2 className="mb-5 text-[20px] font-semibold text-(--primary-color)">
+              <h2 className="mb-5 text-[20px] font-semibold text-(--custom-color)">
                 Customer Reviews {product.stats.rating}
               </h2>
 
@@ -319,7 +319,7 @@ const ProductDetails = () => {
                                   key={i}
                                   className={`w-4 h-4 ${
                                     i < review.rating
-                                      ? "text-(--white-color) fill-(--primary-color)"
+                                      ? "text-(--white-color) fill-(--custom-color)"
                                       : "text-gray-700"
                                   }`}
                                   viewBox="0 0 20 20"
@@ -352,9 +352,7 @@ const ProductDetails = () => {
                           </p>
 
                           <div className="mt-4 flex items-center gap-6 text-sm">
-                            <ReportButton>
-                              Report
-                            </ReportButton>
+                            <ReportButton>Report</ReportButton>
                           </div>
                         </div>
                       </div>
@@ -417,8 +415,58 @@ const ProductDetails = () => {
         );
 
       case "history":
-        return <div className="p-8">Update history...</div>;
-      case "discussion":
+        return (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {/* Page Title */}
+            <h1 className="mb-5 text-[20px] font-semibold text-(--custom-color)">
+              Update History
+            </h1>
+
+            {product.versionsHistory.length > 0 ? (
+              <>
+                {/* Versions Table - Exact NullForums Style */}
+                <div className="overflow-x-auto bg-(--secondary) border border-(--border-color)">
+                  <table className="w-full text-center ">
+                    <thead className="bg-(--accent-foreground) text-[13px] text-(--white-color)  uppercase font-semibold">
+                      <tr className="divide-y divide-(--border-color)!">
+                        <th classNamew="px-6 py-4 ">Version</th>
+                        <th className="px-6 py-4">Release date</th>
+                        <th className="px-6 py-4 ">Downloads</th>
+                        <th className="px-6 py-4 border border-(--border-color)!">
+                          Links
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody className="">
+                      {products[0].versionsHistory.map((ver, index) => (
+                        <tr
+                          key={index}
+                          className="divide-y divide-(--border-color)!"
+                        >
+                          <td className="px-6 py-4 text-(--custom-color) font-medium">
+                            {ver.version}
+                          </td>
+                          <td className="px-6 py-4 ">{ver.date}</td>
+                          <td className="px-6 py-4  ">{ver.downloads}</td>
+
+                          <td className="px-6 py-4! text-center border border-(--border-color)!">
+                            <div className="flex items-center justify-center">
+                              <Button>Download</Button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            ) : (
+              <p>No Updates</p>
+            )}
+          </div>
+        );
+      case "support":
         return <div className="p-8">Discussion thread...</div>;
       default:
         return null;
@@ -445,7 +493,7 @@ const ProductDetails = () => {
         <p className="font-light mb-2">{product.description}</p>
       </div>
 
-      <div className="border-t-5 rounded-sm border-(--primary-color) h-auto bg-(--accent)">
+      <div className="border-t-5 rounded-sm border-(--custom-color) h-auto bg-(--accent)">
         {/* Tabs */}
         <div className="container bg-(--accent) border border-(--border-color)">
           <div className="flex space-x-6 ">
@@ -481,9 +529,9 @@ const ProductDetails = () => {
             />
             <TabButton
               icon={<GoCommentDiscussion />}
-              label="Discussion"
-              active={activeProductDetails === "discussion"}
-              onClick={() => setActiveProductDetails("discussion")}
+              label="Support"
+              active={activeProductDetails === "support"}
+              onClick={() => setActiveProductDetails("support")}
             />
           </div>
         </div>
@@ -500,7 +548,7 @@ function TabButton({ icon, label, active, onClick }) {
       onClick={onClick}
       className={`flex items-center gap-1  ${
         active
-          ? "text-(--primary-color) cursor-pointer bg-(--accent-foreground) py-3 px-3"
+          ? "text-(--custom-color) cursor-pointer bg-(--accent-foreground) py-3 px-3"
           : "hover:text-(--white-color) cursor-pointer py-3 px-3 "
       }`}
     >

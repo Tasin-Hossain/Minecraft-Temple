@@ -15,7 +15,7 @@ export default function RadioOption({
   return (
     <label
       htmlFor={id}
-      className={`w-30 z-1 flex items-center gap-2 ${disabled ? "opacity-60 cursor-not-allowed" : ""} ${className}`}>
+      className={`w-30 z-1 flex items-center gap-2 cursor-pointer ${disabled ? "opacity-60 cursor-not-allowed" : ""} ${className} `}>
       {/* Native radio (visually hidden) */}
       <input
         id={id}

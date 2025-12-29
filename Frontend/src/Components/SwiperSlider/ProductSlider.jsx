@@ -6,48 +6,52 @@ import "swiper/css";
 import Rating from '../../Pages/Rating';
 import Button from '../ui/Button/Button';
 import { toast } from 'react-toastify';
+
+import products from '../../Api/Product';
+
 const ProductSlider = () => {
     const notify = () => toast("Downloading your file!");
   return (
     
     <>
       <Swiper spaceBetween={15} slidesPerView={4} className="w-[90%] ">
-          {pluginsData.map((item) => (
+          {products.map((item) => (
             <SwiperSlide key={item.id} className=" w-full cursor-pointer">
               <div className="flex flex-col items-stretch gap-2 bg-(--accent) border border-(--border-color) rounded-md">
                 <div className="overflow-hidden p-1">
                   <img
-                    className="w-full h-[150px] object-cover rounded-md"
-                    src={item.image}
+                    className="w-full h-[150px] object-fit rounded-md"
+                    src={item.thumbnail}
                     alt={item.title}
                   />
                 </div>
 
-                <div>
+                <div className='bg-(--accent-fourground)'>
                   {/* item title */}
-                  <h2 className="text-[15px] font-semibold text-(--custom-color) px-3 capitalize">
+                  <h2 className="text-[14px] line-clamp-1 mb-2 font-semibold text-(--custom-color) px-3 capitalize">
                     {item.title}
+                  
                   </h2>
                   {/* item username */}
 
-                  <div className='mb-2'>
+                  <div className='mb-3'>
                     <div className='flex items-center gap-2 px-3'>
-                        <h1 className='text-[13px] hover:underline'>MiniTasin</h1>
+                        <h1 className='text-[12px] hover:underline'>{item.creator.username}</h1>
                         {/* item category */}
-                        <span className='text-[13px] text-(--white-color) '>Minecraft config</span>
+                        <span className='text-[12px] text-(--white-color) '>{item.subCategory}</span>
                     </div>
                   </div>
 
                   {/* Item description */}
-                  <p className='text-[13px] px-3 mb-2'>
-                    {item.description}
+                  <p className='text-[12px] px-3 mb-4 line-clamp-2'>
+                    {item.shortDescription}
                   </p>
 
                   <div className="flex gap-3 items-center justify-between px-3 mb-4">
                     {/* item views */}
                     <div className="flex items-center gap-1">
                       <FaRegEye/>
-                      <h3 className="">{item.views}</h3>
+                      <h3 className="">{item.stats.views}</h3>
                     </div>
                    
                     {/* item reating */}
@@ -63,7 +67,7 @@ const ProductSlider = () => {
                       onClick={notify}
                       className="bg-amber-600 rounded-2xl p-2 w-full text-white"
                     >
-                      {item.downloads} Downloads
+                      {item.stats.downloads} Downloads
                     </Button>
                   </div>
                 </div>

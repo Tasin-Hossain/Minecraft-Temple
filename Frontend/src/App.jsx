@@ -33,15 +33,59 @@ import ManageTeams from "./Pages/Accounts/ManageTeams";
 import ChangeUserName from "./Pages/Accounts/ChangeUserName";
 import TwofaVerify from "./Pages/Auth/TwofaVerify";
 import Posts from "./Pages/Community/Posts";
-import ProductSlider from "./Components/SwiperSlider/ProductSlider";
+
 import AllProducts from "./Pages/Products/AllProducts";
 import ProductsSidebar from "./Components/ProductsSidebar";
 import WelcomeMsg from "./Components/WelcomMessage/WelcomeMsg";
-import products from "./Api/Product";
-import Product from "./Pages/Products/ProductDetails";
+
 import ProductDetails from "./Pages/Products/ProductDetails";
+import AdminLayout from "./Admin/AdminLayout";
+import Dashboard from "./Admin/pages/Dashboard";
+
+
+import AppearanceOverview from "./Admin/pages/appearance/AppearanceOverview";
+import AdvertisingPage from "./Admin/pages/appearance/AdvertisingPage";
+import PhrasesPage from "./Admin/pages/appearance/PhrasesPage";
+import TemplatesPage from "./Admin/pages/appearance/TemplatesPage";
+import StylesPage from "./Admin/pages/appearance/StylesPage";
+import ResourcesOverview from "./Admin/pages/Resources/ResourcesOverview";
+import PendingResources from "./Admin/pages/Resources/PendingResources";
+import ResourceCategories from "./Admin/pages/Resources/ResourceCategories";
+import PendingReviews from "./Admin/pages/Resources/PendingReviews";
+import PendingUpdates from "./Admin/pages/Resources/PendingUpdates";
+import ResourceSettings from "./Admin/pages/Resources/ResourceSettings";
+import AddResources from "./Admin/pages/Resources/AddResources";
+import Resources from "./Admin/pages/Resources/Resources";
+
 
 const router = createBrowserRouter([
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      { path: "/admin/appearance", element: <AppearanceOverview /> },
+      { path: "/admin/appearance/styles", element: <StylesPage /> },
+      { path: "/admin/appearance/templates", element: <TemplatesPage /> },
+      { path: "/admin/appearance/phrases", element: <PhrasesPage /> },
+      { path: "/admin/appearance/advertising", element: <ResourcesOverview /> },
+      
+      { path: "/admin/resources/all", element: <Resources /> },
+      { path: "/admin/resources/add", element: <AddResources /> },
+      { path: "/admin/resources/pending", element: <PendingResources /> },
+      { path: "/admin/resources/categories", element: <ResourceCategories /> },
+      { path: "/admin/resources/updates", element: <PendingUpdates /> },
+      { path: "/admin/resources/reviews", element: <PendingReviews /> },
+      { path: "/admin/resources/settings", element: <ResourceSettings /> },
+    ],
+  },
   {
     path: "/login",
     element: (

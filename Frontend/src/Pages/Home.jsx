@@ -98,24 +98,33 @@ const Home = () => {
   return (
     <div className="container py-6">
       <div
-        className=" rounded bg-no-repeat bg-center bg-cover "
-        style={{
-          backgroundImage: "url('/src/Assets/Mc slide 3.jpg')",
-        }}
+        className="particle-container rounded bg-no-repeat bg-center bg-cover "
+        // style={{
+        //   backgroundImage: "url('/src/Assets/Mc slide 3.jpg')",
+        // }}
       >
-        <div className="bg-black/65">
+        <div className="relative min-auto rounded bg-black/50  overflow-hidden">
           {/* Header Section */}
           <div className="w-[87%] m-auto flex items-center py-3 pt-12">
+            <video
+              className="absolute inset-0 w-full h-full object-cover z-[-2]"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/videos/cherry-poster.jpg" // optional fallback image
+              src="/src/Assets/video.mp4"
+            />
             <h2 className="text-[20px]">
               Find the best assets & Models to grow your
             </h2>
-            <div className=" h-[2.1em] overflow-hidden ">
+            <div className="h-[2.1em] overflow-hidden">
               <div
-                className="transition-transform duration-500 ml-2 ease-in-out flex flex-col "
+                className="transition-transform duration-500 ml-2 ease-in-out flex flex-col"
                 style={{ transform: `translateY(-${index * 2}em)` }}
               >
                 {words.map((word, i) => (
-                  <span key={i} className=" text-(--custom-color) text-[20px]">
+                  <span key={i} className="text-[20px] text-amber-400">
                     {word}
                   </span>
                 ))}
@@ -124,7 +133,7 @@ const Home = () => {
           </div>
 
           {/* Search Section */}
-          <div className=" flex justify-center items-center gap-3 mb-2">
+          <div className="flex justify-center items-center gap-3 mb-2">
             <div className="relative w-full max-w-[80%]">
               <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 z-10" />
               <Input
@@ -134,61 +143,58 @@ const Home = () => {
                 className="pl-10 w-full"
               />
             </div>
-            <ButtonPrimary className="px-6! py-2!">Search</ButtonPrimary>
+            <ButtonPrimary className="px-6 py-2">Search</ButtonPrimary>
           </div>
+
           {/* Trending Title */}
-          <div className=" text-white mb-3">
-            <div className="w-[85%] m-auto flex items-center justify-center gap-2 jus">
-              <h4 className=" text-[14px] text-(--custom-color)">
-                Trending Now:
-              </h4>
+          <div className="mb-3">
+            <div className="w-[85%] m-auto flex items-center justify-center gap-2 flex-wrap">
+              <h4 className="text-[14px] text-amber-400">Trending Now:</h4>
               {trandingTitles.map((title, i) => (
                 <span
                   key={i}
                   onClick={() => setTrandingTitleSearch(title)}
-                  className="text-(--dim-white-color) transition-all  hover:text-(--white-color) cursor-pointer"
+                  className="transition-all hover:text-white cursor-pointer text-[14px]"
                 >
                   {title}
+                  {i < trandingTitles.length - 1 && (
+                    <span className="mx-2">•</span>
+                  )}
                 </span>
               ))}
             </div>
           </div>
 
           {/* Stats Section */}
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-6 flex-wrap">
             <div className="flex items-center gap-1">
-              <FiUsers size={14} className="text-(--custom-color)" />
-              <span className="text-[14px] text-(--custom-color)">
-                138,644+{" "}
-              </span>
-              <h5 className=" capitalize">members</h5>
+              <FiUsers size={14} className="text-amber-400" />
+              <span className="text-[14px] text-amber-400">138,644+</span>
+              <h5 className="capitalize text-gray-300">members</h5>
             </div>
 
             <div className="flex items-center gap-1">
-              <FaRegFileAlt size={14} className="text-(--custom-color)" />
-              <span className="text-[14px] text-(--custom-color)">8,644+ </span>
-              <h5 className="capitalize">Uploads</h5>
+              <FaRegFileAlt size={14} className="text-amber-400" />
+              <span className="text-[14px] text-amber-400">8,644+</span>
+              <h5 className="capitalize text-gray-300">Uploads</h5>
             </div>
 
             <div className="flex items-center gap-1">
-              <FaRegMessage size={14} className="text-(--custom-color)" />
-              <span className="text-[14px] text-(--custom-color)">
-                18,644+{" "}
-              </span>
-              <h5 className="capitalize">Threads</h5>
+              <FaRegMessage size={14} className="text-amber-400" />
+              <span className="text-[14px] text-amber-400">18,644+</span>
+              <h5 className="capitalize text-gray-300">Threads</h5>
             </div>
           </div>
 
-          {/* Card Section*/}
+          {/* Card Section */}
           <div className="w-full">
-            <div className="flex justify-center  flex-wrap gap-4 pt-4 pb-7">
+            <div className="flex justify-center flex-wrap gap-4 pt-4 pb-7">
               {minecraftData.map((item) => (
-                <Link to={item.url}>
+                <Link to={item.url} key={item.id}>
                   <div
-                    key={item.id}
                     className="group relative w-[250px] h-[140px] rounded-md overflow-hidden cursor-pointer shadow-lg 
                      transition-all duration-300 ease-in-out 
-                     hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-(--custom-color)"
+                     hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-amber-400"
                   >
                     <img
                       src={item.image}
@@ -198,7 +204,8 @@ const Home = () => {
                     <div className="absolute inset-0 bg-black/50 transition-colors duration-300 group-hover:bg-black/40 z-10"></div>
                     <h3
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                         text-white text-xl font-bold z-20 drop-shadow-md text-center w-full px-2 hover:text-amber-300"
+                         text-white text-xl font-bold z-20 drop-shadow-md text-center w-full px-2 
+                         group-hover:text-amber-300 transition-colors"
                     >
                       {item.title}
                     </h3>
@@ -207,6 +214,11 @@ const Home = () => {
               ))}
             </div>
           </div>
+
+          {/* Firefly Particles - Minecraft Marketplace Style */}
+          {/* {[...Array(18)].map((_, i) => (
+            <div key={i} className="firefly" />
+          ))} */}
         </div>
       </div>
 

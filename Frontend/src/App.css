@@ -1,0 +1,62 @@
+/* Firefly Background - Minecraft Marketplace Style */
+.firefly-container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000000, #ffffff);
+  overflow: hidden;
+}
+
+.firefly {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #9ceaef, #c4fff9 40%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 8px #c4fff9;
+  pointer-events: none;
+  animation: float 20s infinite linear, glow 3s infinite alternate;
+}
+
+/* প্রত্যেকটা firefly-এর পজিশন আর স্পিড আলাদা */
+.firefly:nth-child(1) { left: 5%; top: 20%; animation-duration: 28s, 2.5s; animation-delay: 0s, 0s; }
+.firefly:nth-child(2) { left: 15%; top: 60%; animation-duration: 32s, 3s; animation-delay: 3s, 1s; }
+.firefly:nth-child(3) { left: 25%; top: 10%; animation-duration: 24s, 2s; animation-delay: 6s, 0.5s; }
+.firefly:nth-child(4) { left: 35%; top: 80%; animation-duration: 30s, 4s; animation-delay: 1s, 2s; }
+.firefly:nth-child(5) { left: 45%; top: 30%; animation-duration: 26s, 3s; animation-delay: 8s, 1.5s; }
+.firefly:nth-child(6) { left: 55%; top: 70%; animation-duration: 22s, 2.8s; animation-delay: 4s, 0s; }
+.firefly:nth-child(7) { left: 65%; top: 15%; animation-duration: 35s, 3.5s; animation-delay: 10s, 2s; }
+.firefly:nth-child(8) { left: 75%; top: 50%; animation-duration: 29s, 2s; animation-delay: 2s, 1s; }
+.firefly:nth-child(9) { left: 85%; top: 90%; animation-duration: 25s, 4s; animation-delay: 7s, 0s; }
+.firefly:nth-child(10) { left: 10%; top: 40%; animation-duration: 31s, 3s; animation-delay: 5s, 2.5s; }
+.firefly:nth-child(11) { left: 30%; top: 55%; animation-duration: 27s, 2.5s; animation-delay: 9s, 1s; }
+.firefly:nth-child(12) { left: 50%; top: 85%; animation-duration: 33s, 3.8s; animation-delay: 0s, 0s; }
+.firefly:nth-child(13) { left: 70%; top: 25%; animation-duration: 23s, 2s; animation-delay: 12s, 1.5s; }
+.firefly:nth-child(14) { left: 90%; top: 65%; animation-duration: 28s, 3.2s; animation-delay: 4s, 0s; }
+.firefly:nth-child(15) { left: 20%; top: 35%; animation-duration: 30s, 4s; animation-delay: 11s, 2s; }
+.firefly:nth-child(16) { left: 40%; top: 75%; animation-duration: 26s, 2.8s; animation-delay: 3s, 1s; }
+.firefly:nth-child(17) { left: 60%; top: 45%; animation-duration: 34s, 3s; animation-delay: 6s, 0.5s; }
+.firefly:nth-child(18) { left: 80%; top: 5%; animation-duration: 25s, 2.5s; animation-delay: 8s, 2s; }
+
+@keyframes float {
+  0% {
+    transform: translate(0, 100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translate(120px, -120px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 12px 4px #9ceaef;
+    opacity: 0.6;
+  }
+  100% {
+    box-shadow: 0 0 28px 12px #c4fff9;
+    opacity: 1;
+  }
+}

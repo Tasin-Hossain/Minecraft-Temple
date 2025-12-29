@@ -18,7 +18,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../Redux/userSlice";
 import { TbLogout } from "react-icons/tb";
 
-import { ButtonPrimary } from "./ui/Button/Button";
+import { ButtonEmerald, ButtonPrimary } from "./ui/Button/Button";
 const Header = () => {
   const { user } = useSelector((store) => store.user);
   const mail = true;
@@ -474,13 +474,13 @@ const Header = () => {
 
               </div>
                 <div >
-                  <ButtonPrimary>
+                  <ButtonEmerald>
                     <MdOutlineRocketLaunch
                       size={16}
                       className="text-(--white-color)"
                     />{" "}
                     Go Premium
-                  </ButtonPrimary>
+                  </ButtonEmerald>
                 </div>
 
               {/* Notification popup */}
