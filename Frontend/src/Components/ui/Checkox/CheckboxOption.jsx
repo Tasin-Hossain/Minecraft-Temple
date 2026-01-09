@@ -38,7 +38,7 @@ const CheckboxOption = ({
             className="w-0 h-0 opacity-0 absolute"
           />
         </div>
-        <span>{title}</span>
+        <span className="text-[13px] text-(--dim-white-color)">{title}</span>
       </div>
       {description && <span className="ml-9">{description}</span>}
     </label>

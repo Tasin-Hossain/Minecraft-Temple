@@ -339,7 +339,7 @@ export default function AdminSidebar({ expanded }) {
               >
                 {IconElement}
                 <span
-                  className={`flex-1 whitespace-nowrap transition-all duration-300 text-(--white-color)${
+                  className={`flex-1 whitespace-nowrap transition-all duration-300 ${
                     expanded ? " opacity-100" : "opacity-0"
                   }`}
                 >

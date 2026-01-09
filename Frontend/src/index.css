@@ -64,7 +64,7 @@ h1 {
 
 body {
   background-color: var(--background-color) ;
-  color: var(--dim-white-color);
+  color: var(--dim-white-color) ;
   font-size: 14px;
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
@@ -87,6 +87,113 @@ body {
     transform: rotate(1turn);
   }
 }
+
+
+/* tiptep quote */
+@layer components {
+  .prose blockquote {
+    @apply mt-6 mb-6 pl-6 border-l-4 italic text-gray-700 dark:text-gray-300;
+    border-left-color: #FFA41F;
+    font-style: italic;
+    quotes: "“" "”" "‘" "’";
+    position: relative;
+  }
+
+  .prose blockquote::before {
+    content: open-quote;
+    @apply text-6xl text-[#FFA41F] absolute -left-4 -top-2 opacity-70;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  .prose blockquote p {
+    @apply my-0 text-lg leading-relaxed;
+  }
+}
+/* Tiptap Editor এর ভিতরে List Marker (dot/number) দেখানোর জন্য */
+.prose ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+}
+
+.prose ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+}
+
+.prose ul ul,
+.prose ol ul {
+  list-style-type: circle !important;
+}
+
+.prose ol ol,
+.prose ul ol {
+  list-style-type: lower-alpha !important;
+}
+.prose .list-marker {
+  margin-right: 0.5rem;
+  font-size: 1.1em;
+}
+.custom-marker {
+  font-size: 1.4em !important;
+  line-height: 1 !important;
+  margin-top: 0.2em;
+}
+.prose h1{
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.prose h2{
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.prose h3{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Nested list এর জন্য আরও সুন্দর করতে চাইলে */
+/* Task List / Checklist – চেকবক্স আর টেক্সট পাশাপাশি করার ফাইনাল ফিক্স */
+.prose ul[data-type="taskList"] {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.prose ul[data-type="taskList"] > li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.prose ul[data-type="taskList"] > li > label {
+  flex-shrink: 0 !important;
+  margin-top: 0.15rem !important;
+  cursor: pointer;
+}
+
+.prose ul[data-type="taskList"] > li > label > input[type="checkbox"] {
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.prose ul[data-type="taskList"] > li > div {
+  flex: 1 !important;
+  min-width: 0;
+}
+
+/* চেক করলে সুন্দর স্ট্রাইকথ্রু + ফেইড */
+.prose ul[data-type="taskList"] li[data-checked="true"] > div {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+.prose li::marker {
+  font-weight: bold;
+}
+
+
 
 /* admin penel sidebar scrollbar*/
 .custom-scrollbar::-webkit-scrollbar {

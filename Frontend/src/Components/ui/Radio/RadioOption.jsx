@@ -48,7 +48,7 @@ export default function RadioOption({
 
       {/* Text block */}
       <span className="flex flex-col text-left">
-        <span className="">
+        <span className="text-(--dim-white-color)">
           {title}
         </span>
         {description ? (

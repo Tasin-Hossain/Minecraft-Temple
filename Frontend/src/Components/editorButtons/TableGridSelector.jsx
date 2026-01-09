@@ -1,76 +1,83 @@
 import React, { useState } from "react";
 import { FaTable } from "react-icons/fa";
+import Tooltip from "../Tooltip";
+import { ButtonEmerald } from "../ui/Button/Button";
 
 export default function TableGridSelector({ editor }) {
+  if (!editor) return null;
+
   const [showGrid, setShowGrid] = useState(false);
   const [hoverRow, setHoverRow] = useState(0);
   const [hoverCol, setHoverCol] = useState(0);
 
-  if (!editor) return null;
-
-  const rows = 10;
+  const rows = 8;
   const cols = 10;
 
   const createTable = () => {
+    if (hoverRow === 0 || hoverCol === 0) return;
     editor
       .chain()
       .focus()
-      .insertTable({
-        rows: hoverRow,
-        cols: hoverCol,
-        withHeaderRow: true,
-      })
+      .insertTable({ rows: hoverRow, cols: hoverCol, withHeaderRow: true })
       .run();
-
-    setShowGrid(false); // close menu after create
+    setShowGrid(false);
+    setHoverRow(0);
+    setHoverCol(0);
   };
 
   return (
     <div className="relative inline-block">
-      {/* Button */}
-      <button
-        onClick={() => setShowGrid((prev) => !prev)}
-        className="p-2 bg-gray-700 rounded hover:bg-gray-600"
-      >
-        <FaTable size={18} />
-      </button>
-
-      {/* ❗ Only show when user clicks, otherwise return null */}
-      {showGrid && (
-        <div
-          className="absolute top-10 left-0 bg-gray-800 p-4 rounded shadow-xl z-50"
-          onMouseLeave={() => setShowGrid(false)}
+      <Tooltip text="Insert Table">
+        <ButtonEmerald
+          onClick={() => setShowGrid(!showGrid)}
+          className="p-2!"
         >
-          <div className="text-center text-white mb-2">
-            {hoverRow} × {hoverCol}
-          </div>
+          <FaTable size={18} />
+        </ButtonEmerald>
+      </Tooltip>
 
-          <div className="grid gap-1"
-            style={{
-              gridTemplateColumns: `repeat(${cols}, 20px)`,
-            }}
-          >
-            {[...Array(rows)].map((_, r) =>
-              [...Array(cols)].map((_, c) => {
-                const active = r < hoverRow && c < hoverCol;
+      {showGrid && (
+        <>
+          {/* Outside click */}
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setShowGrid(false)}
+          />
 
-                return (
-                  <div
-                    key={`${r}-${c}`}
-                    onMouseEnter={() => {
-                      setHoverRow(r + 1);
-                      setHoverCol(c + 1);
-                    }}
-                    onClick={createTable}
-                    className={`w-5 h-5 border rounded-sm cursor-pointer ${
-                      active ? "bg-blue-500 border-blue-400" : "border-gray-600"
-                    }`}
-                  ></div>
-                );
-              })
-            )}
+          <div className="absolute top-full left-0 mt-2 z-50 bg-(--accent-foreground) border-2 border-(--border-color) rounded- p-4">
+            <div className="text-center text-(--dim-white-color) mb-3 text-sm font-medium">
+              {hoverRow || 1} × {hoverCol || 1} Table
+            </div>
+
+            <div
+              className="grid gap-1"
+              style={{ gridTemplateColumns: `repeat(${cols}, 24px)` }}
+            >
+              {Array.from({ length: rows }, (_, r) =>
+                Array.from({ length: cols }, (_, c) => {
+                  const active = r < hoverRow && c < hoverCol;
+                  return (
+                    <div
+                      key={`${r}-${c}`}
+                      onMouseEnter={() => {
+                        setHoverRow(r + 1);
+                        setHoverCol(c + 1);
+                      }}
+                      onClick={createTable}
+                      className={`
+                        w-4 h-4 rounded- border-2 cursor-pointer 
+                        ${active
+                          ? "bg-(--custom-color) border-(--border-color) rounded-sm "
+                          : "border border-(--border-color) rounded-sm"
+                        }
+                      `}
+                    />
+                  );
+                })
+              )}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

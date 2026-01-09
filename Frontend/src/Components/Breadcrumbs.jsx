@@ -21,16 +21,16 @@ const Breadcrumbs = () => {
         return isLast ? (
           <span
             key={breadcrumbPath}
-            className="  font-bold hover:cursor-not-allowed"
+            className="  hover:cursor-not-allowed"
           >
             {" "}
-            <span className="font-semibold text-(--white-color)">/</span> {name}
+            <span className="text-(--dim-white-color)">/</span> {name}
           </span>
         ) : (
           <Link
             key={breadcrumbPath}
             to={breadcrumbPath}
-            className="text-(--custom-color)  font-semibold hover:text-(--primary-color)"
+            className="text-(--custom-color) hover:text-(--custom-color)"
           >
             / {name}
           </Link>
